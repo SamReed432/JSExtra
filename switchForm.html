@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JUMP!</title>
+</head>
+
+<body>
+	<form if="form">
+	<input id="box1">
+	<button type="button" id="switch" onClick="swap()">JUMP&gt;</button>
+	<input id="box2">
+	</form>
+	
+	<script>
+		var phase = 0;
+		
+	function swap(){
+		if (phase == 0){
+			swapL();
+		} else {
+			swapR();
+		}
+						}
+	
+	function swapL(){
+		document.getElementById('box2').value = document.getElementById('box1').value;
+		document.getElementById('box1').value = "";
+		document.getElementById('switch').innerHTML = "&ltJUMP";
+		phase = 1;
+	}
+	function swapR(){
+		document.getElementById('box1').value = document.getElementById('box2').value;
+		document.getElementById('box2').value = "";
+		document.getElementById('switch').innerHTML = "JUMP&gt";
+		phase = 0;
+	}
+		
+	</script>
+</body>
+</html>

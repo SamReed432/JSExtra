@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Check Boxes</title>
+</head>
+
+<body onLoad="unCheck()">
+	<form>
+	<input type="checkbox" id="checkAll" onClick="check()"><label id="switchLabel">Check All</label><br><br>
+	<input type="checkbox" id="1"><label>first</label><br>
+	<input type="checkbox" id="2"><label>second</label><br>
+	<input type="checkbox" id="3"><label>third</label><br>
+	<input type="checkbox" id="4"><label>fourth</label><br>
+	
+	</form>
+	<script>
+		checked = false;
+		boxes = ["1", "2", "3", "4"];
+		
+		function check(){
+			if (checked == false){
+				checkAll();
+			} else {
+				unCheck();
+			}
+		}
+		
+		function checkAll(){
+			for (i = 0; i < 4; i++){
+				document.getElementById(boxes[i]).checked = true;
+				checked = true;
+			}
+			document.getElementById("switchLabel").innerHTML = "Uncheck All";
+		}
+		function unCheck(){
+			for (i = 0; i < 4; i++){
+				document.getElementById(boxes[i]).checked = false;
+				checked = false;
+			}
+			document.getElementById("checkAll").checked = false;
+			document.getElementById("switchLabel").innerHTML = "Check All";
+		}
+	</script>
+</body>
+</html>
